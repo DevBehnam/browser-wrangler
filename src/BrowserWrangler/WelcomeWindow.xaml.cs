@@ -112,8 +112,8 @@ public sealed partial class WelcomeWindow : Window
     private static void SetStatus(Microsoft.UI.Xaml.Controls.FontIcon icon, bool ok)
     {
         icon.Glyph = ok ? "\uE73E" : "\uEA39";
-        icon.Foreground = new Microsoft.UI.Xaml.Media.SolidColorBrush(
-            ok ? Microsoft.UI.Colors.Green : Microsoft.UI.Colors.OrangeRed);
+        icon.Foreground = (Microsoft.UI.Xaml.Media.Brush)Application.Current.Resources[
+            ok ? "SystemFillColorSuccessBrush" : "SystemFillColorCriticalBrush"];
     }
 
     /// <summary>

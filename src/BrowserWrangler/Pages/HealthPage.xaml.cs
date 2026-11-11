@@ -26,8 +26,8 @@ public sealed partial class HealthPage : Page
             header.Children.Add(new FontIcon
             {
                 Glyph = check.IsOk ? "\uE73E" : "\uEA39",
-                Foreground = new Microsoft.UI.Xaml.Media.SolidColorBrush(
-                    check.IsOk ? Microsoft.UI.Colors.Green : Microsoft.UI.Colors.OrangeRed),
+                Foreground = (Microsoft.UI.Xaml.Media.Brush)Application.Current.Resources[
+                    check.IsOk ? "SystemFillColorSuccessBrush" : "SystemFillColorCriticalBrush"],
                 VerticalAlignment = VerticalAlignment.Center,
             });
             header.Children.Add(new TextBlock
